@@ -1,5 +1,5 @@
 var tentativa = 1
-var palavra_chave = sprt_palavra('caixa')
+var palavra_chave = 'caixa'
 
 function sprt_palavra(str){
     palavra_vet = [
@@ -18,10 +18,6 @@ function contem(elemeto,vetor){
             break
     }
     return false
-}
-function cont(ele,vet){
-    var x = contem(ele,vet)
-    window.alert(x)
 }
 }
 function definir_palavra(){
@@ -46,40 +42,45 @@ function definir_palavra(){
             l5.innerHTML=palavra_vetor[4]
         }
         {
-            if(contem(palavra_vetor[0],palavra_chave)){
+            if( palavra_chave.includes(palavra_vetor[0])){
                 l1.className="letter s_right"
-            }else if(palavra_vetor[0]==palavra_chave[0]){
-                l1.className="letter right"
             }else{
                 l1.className="letter rong"
             }
-            if(contem(palavra_vetor[1],palavra_chave)){
+            if(palavra_vetor[0]==palavra_chave[0]){
+                l1.className="letter right"
+            }
+            if(palavra_chave.includes(palavra_vetor[1])){
                 l2.className="letter s_right"
-            }else if(palavra_vetor[1]==palavra_chave[1]){
-                l2.className="letter right"
             }else{
                 l2.className="letter rong"
             }
-            if(contem(palavra_vetor[2],palavra_chave)){
+            if(palavra_vetor[1]==palavra_chave[1]){
+                l2.className="letter right"
+            }
+            if(palavra_chave.includes(palavra_vetor[2])){
                 l3.className="letter s_right"
-            }else if(palavra_vetor[2]==palavra_chave[2]){
-                l3.className="letter right"
             }else{
                 l3.className="letter rong"
             }
-            if(contem(palavra_vetor[3],palavra_chave)){
+            if(palavra_vetor[2]==palavra_chave[2]){
+                l3.className="letter right"
+            }
+            if(palavra_chave.includes(palavra_vetor[3])){
                 l4.className="letter s_right"
-            }else if(palavra_vetor[3]==palavra_chave[3]){
-                l4.className="letter right"
             }else{
                 l4.className="letter rong"
             }
-            if(contem(palavra_vetor[4],palavra_chave)){
+            if(palavra_vetor[3]==palavra_chave[3]){
+                l4.className="letter right"
+            }
+            if(palavra_chave.includes(palavra_vetor[4])){
                 l5.className="letter s_right"
-            }else if(palavra_vetor[4]==palavra_chave[4]){
-                l5.className="letter right"
             }else{
                 l5.className="letter rong"
+            }
+            if(palavra_vetor[4]==palavra_chave[4]){
+                l5.className="letter right"
             }
         }
         
@@ -87,3 +88,5 @@ function definir_palavra(){
         
     }
 }
+
+cont(5,[1,2,3,4,5])
