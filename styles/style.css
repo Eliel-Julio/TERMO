@@ -1,0 +1,49 @@
+@charset "utf-8";
+body{
+    display: flex;
+    flex-direction: column;
+    color: white;
+    background-color: rgb(10, 10, 44);
+    align-items: center;
+    main{
+        margin: auto;
+        padding: 8px;
+        display: flex;
+        flex-direction: column;
+        background-color: rgba(20, 32, 86, 0.5);
+        position: relative;
+        border-radius: 10px;
+        margin-bottom: 10px;
+        .line{
+            display: flex;
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif, 'Arial Narrow', Arial, sans-serif;
+            .letter{
+                background-color: rgba(57, 57, 76, 0.751);
+                width: 50px;height: 70px;
+                margin: 4px;
+                border-radius: 10px;
+                text-align: center;
+                font-size: 3em;
+            }
+            .right{
+                background-color: rgb(24, 136, 24);
+                color: white;
+            }
+            .s_right{
+                background-color: rgb(170, 116, 15);
+                color: white;
+            }
+            .rong{
+                background-color: rgba(45, 45, 55, 0.718);
+            }
+        }
+    }
+    .btn_defalt{
+        display: flex;
+        background-color: blue;
+        height: 50px;width: 120px;
+        align-items: center;
+        justify-content: center;
+        border-radius: 15px;
+    }
+}
