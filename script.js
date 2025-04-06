@@ -1,5 +1,11 @@
 var tentativa = 1
-var palavra_chave = 'sagaz'
+var palavra_chave = 'futil'
+
+const input1 = document.getElementById("input1");
+const input2 = document.getElementById("input2");
+const input3 = document.getElementById("input3");
+const input4 = document.getElementById("input4");
+const input5 = document.getElementById("input5");
 
 function sprt_palavra(str){
     palavra_vet = [
@@ -20,16 +26,28 @@ function contem(elemeto,vetor){
     return false
 }
 }
+function get_palavra(){
+    palavra_vetor=[
+        input1.value,
+        input2.value,
+        input3.value,
+        input4.value,
+        input5.value]
+    if (contem("",palavra_vetor)){
+        window.alert('preencha todos os campos')
+    }else{
+        definir_palavra()
+}
 function definir_palavra(){
     if(tentativa>6){
         window.alert("tentativas esgotadas")
     }else{
         // var palavra = window.prompt('escolha a palavra')
-        var palavra = 'teste'
-        if (palavra.length!=5){
+        // var palavra = 'teste'
+        if (0!=0 /*palavra.length!=5*/){
             window.alert('palavra não conforme')
         }else{
-            palavra_vetor=sprt_palavra(palavra)
+            // palavra_vetor=sprt_palavra(palavra)
             {//atribuindo as letras no html  
             var l1 = document.getElementById('letter1_'+tentativa)
                 l1.innerHTML=palavra_vetor[0]
@@ -97,11 +115,7 @@ function definir_palavra(){
         
     }
 }
-const input1 = document.getElementById("input1");
-const input2 = document.getElementById("input2");
-const input3 = document.getElementById("input3");
-const input4 = document.getElementById("input4");
-const input5 = document.getElementById("input5");
+
 
 input1.addEventListener("input", function () {
     if (this.value.length === this.maxLength) {input2.focus();
@@ -118,3 +132,4 @@ input4.addEventListener("input", function () {
 input5.addEventListener("input", function () {
     if (this.value.length === this.maxLength) {input5.focus();
     }else if(this.value.length === 0){input4.focus();}});
+    

@@ -46,6 +46,7 @@ body{
             box-sizing: border-box;
             margin: 4px;
             background-color: rgba(57, 57, 76, 0.751);
+            color: white;
             width: 50px;height: 70px;
             margin: 4px;
             border-radius: 10px;
