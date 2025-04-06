@@ -10,11 +10,11 @@
     <h1>Termo</h1>
     <main>
         <div class="line" id="line1">
-            <div class="letter right"id="letter1_1">T</div>
-            <div class="letter s_right" id="letter2_1">E</div>
-            <div class="letter rong" id="letter3_1">R</div>
-            <div class="letter" id="letter4_1">M</div>
-            <div class="letter" id="letter5_1">O</div>
+            <div class="letter" id="letter1_1"></div>
+            <div class="letter" id="letter2_1"></div>
+            <div class="letter" id="letter3_1"></div>
+            <div class="letter" id="letter4_1"></div>
+            <div class="letter" id="letter5_1"></div>
         </div>
         <div class="line" id="line2">
             <div class="letter" id="letter1_2"></div>
@@ -50,7 +50,17 @@
             <div class="letter" id="letter3_6"></div>
             <div class="letter" id="letter4_6"></div>
             <div class="letter" id="letter5_6"></div>
-        </div>    
+        </div>
+        <form action="">
+            <div id="input_box">
+                <input class="input_ltter" type="text" id="input1" maxlength="1" onkeyup="verifica(event)">
+                <input class="input_ltter" type="text" id="input2" maxlength="1" onkeyup="verifica(event)">
+                <input class="input_ltter" type="text" id="input3" maxlength="1" onkeyup="verifica(event)">
+                <input class="input_ltter" type="text" id="input4" maxlength="1" onkeyup="verifica(event)">
+                <input class="input_ltter" type="text" id="input5" maxlength="1" onkeyup="verifica(event)">
+            </div>
+            
+        </form>
     </main>
     <div class="btn_defalt" onclick="definir_palavra()"><p>definir palavra</p></div>
     <div class="btn_defalt" onclick="contem(5,[1,2,3,4,5])"><p>testes</p></div>

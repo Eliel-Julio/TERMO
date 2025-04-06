@@ -33,10 +33,26 @@ body{
                 background-color: rgb(170, 116, 15);
                 color: white;
             }
-            .rong{
+            .wrong{
                 background-color: rgba(45, 45, 55, 0.718);
             }
         }
+    #input_box{
+        display: flex;
+        flex-direction: row;
+        position: absolute;
+        top: 8px;
+        .input_ltter{
+            box-sizing: border-box;
+            margin: 4px;
+            background-color: rgba(57, 57, 76, 0.751);
+            width: 50px;height: 70px;
+            margin: 4px;
+            border-radius: 10px;
+            text-align: center;
+            font-size: 3em;
+        }
+    }
     }
     .btn_defalt{
         display: flex;
