@@ -4,7 +4,7 @@ fetch("palavras_termo.txt")
     .then(response => response.text())
     .then(texto => {
     var tentativa = 1
-    palavras = texto.split('\r\n')
+    palavras = texto.split('\n')
 
     var rng = new Math.seedrandom(hoje);
     var palavra_chave = palavras[Math.floor(rng() * palavras.length)]
