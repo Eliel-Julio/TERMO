@@ -1,6 +1,6 @@
 // var palavra_chave = 'carne'
 const hoje = new Date().toISOString().split('T')[0];
-fetch("palavras_termos.txt")
+fetch("palavras_termo.txt")
     .then(response => response.text())
     .then(texto => {
     var tentativa = 1
