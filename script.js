@@ -1,11 +1,15 @@
 var tentativa = 1
-var palavra_chave = 'futil'
+var palavra_chave = 'carne'
 
 const input1 = document.getElementById("input1");
 const input2 = document.getElementById("input2");
 const input3 = document.getElementById("input3");
 const input4 = document.getElementById("input4");
 const input5 = document.getElementById("input5");
+
+const inputs = document.querySelectorAll("input");
+
+input1.focus()
 
 function sprt_palavra(str){
     palavra_vet = [
@@ -33,11 +37,18 @@ function get_palavra(){
         input3.value,
         input4.value,
         input5.value]
-    if (contem("",palavra_vetor)){
+    if (palavra_vetor.includes('')){
         window.alert('preencha todos os campos')
     }else{
         definir_palavra()
-}
+        console.log(palavra_vetor, NaN)
+        input1.value=''
+        input2.value=''
+        input3.value=''
+        input4.value=''
+        input5.value=''
+        input1.focus()
+}}
 function definir_palavra(){
     if(tentativa>6){
         window.alert("tentativas esgotadas")
@@ -115,21 +126,48 @@ function definir_palavra(){
         
     }
 }
+function focarProximoVazio(atualIndex) {
+    for (let j = atualIndex + 1; j < inputs.length; j++) {
+        if (inputs[j].value === "") {
+            inputs[j].focus();
+            return;
+        }
+    }
+}
+
+addEventListener("keydown", function(event) {
+    if (event.key === "Enter") {
+        get_palavra();
+    }})
+
+inputs.forEach((input, index) => {
 
 
-input1.addEventListener("input", function () {
-    if (this.value.length === this.maxLength) {input2.focus();
-    }else if(this.value.length === 0){input1.focus();}});
-input2.addEventListener("input", function () {
-    if (this.value.length === this.maxLength) {input3.focus();
-    }else if(this.value.length === 0){input1.focus();}});
-input3.addEventListener("input", function () {
-    if (this.value.length === this.maxLength) {input4.focus();
-    }else if(this.value.length === 0){input2.focus();}});
-input4.addEventListener("input", function () {
-    if (this.value.length === this.maxLength) {input5.focus();
-    }else if(this.value.length === 0){input3.focus();}});
-input5.addEventListener("input", function () {
-    if (this.value.length === this.maxLength) {input5.focus();
-    }else if(this.value.length === 0){input4.focus();}});
+    input.addEventListener("keydown", function(event) {
+        switch (event.key) {
+            case "Enter":
+            get_palavra();
+            break;
+            case "Backspace":
+            if (this.value.length === 0){
+                inputs[index-1].value='';}
+            this.value = "";
+            inputs[index-1].focus();
+            event.preventDefault();
+            break;default:break;
+        }
+        if (event.key.length === 1) {
+            event.preventDefault(); // Impede comportamento padrão
+            this.value = event.key;
+            if (this.value.length === this.maxLength) {
+                if (index < inputs.length - 1) {
+                    focarProximoVazio(index); // Foca no próximo input vazio
+                } else {
+                    this.blur(); // Remove focus from the last input
+                }
+            }}
+        
+        });
+
+})
     
