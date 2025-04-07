@@ -1,5 +1,18 @@
 var tentativa = 1
-var palavra_chave = 'carne'
+// var palavra_chave = 'carne'
+
+const hoje = new Date().toISOString().split('T')[0];
+
+fetch("termos.txt")
+    .then(response => response.text())
+    .then(texto => {
+    // console.log("Conteúdo do arquivo:", texto);
+    const palavras = texto.split('\n')
+});
+
+
+// var palavra_chave = palavras[Math.floor(seedrandom(hoje) * palavras.length)]
+console.log(hoje, '-' ,seedrandom(hoje))
 
 const input1 = document.getElementById("input1");
 const input2 = document.getElementById("input2");
