@@ -51,7 +51,7 @@ function get_palavra(){
 function definir_palavra(){
     if(tentativa>6){
         window.alert("tentativas esgotadas")
-    }else if(palavras.includes(palavra_vetor.join(''))){
+    }else if((true || palavras.includes(palavra_vetor.join('')))){
         // var palavra = window.prompt('escolha a palavra')
         // var palavra = 'teste'
             // palavra_vetor=sprt_palavra(palavra)
