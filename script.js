@@ -6,7 +6,7 @@ fetch("termos.txt")
     var tentativa = 1
     palavras = texto.split('\r\n')
 
-    var rng = new Math.seedrandom(hoje);
+    var rng = new Math.seedrandom(hoje+1);
     var palavra_chave = palavras[Math.floor(rng() * palavras.length)]
     console.log(' data:' ,hoje,
                 '\n resposta do dia:', palavra_chave)
