@@ -1,3 +1,4 @@
+
 // var palavra_chave = 'carne'
 const hoje = new Date().toISOString().split('T')[0];
 fetch("termos.txt")
@@ -6,12 +7,10 @@ fetch("termos.txt")
     var tentativa = 1
     palavras = texto.split('\r\n')
 
-    var rng = new Math.seedrandom(hoje+1);
+    var rng = new Math.seedrandom(hoje+444);
     var palavra_chave = palavras[Math.floor(rng() * palavras.length)]
     console.log(' data:' ,hoje,
                 '\n resposta do dia:', palavra_chave)
-
-
 
 const inputs = document.querySelectorAll("input");
 
@@ -37,6 +36,7 @@ function get_palavra(){
         inputs[4].value]
     if (palavra_vetor.includes('')){
         window.alert('preencha todos os campos')
+        console.log('preencha todos os campos:', palavra_vetor)
     }else{
         definir_palavra()
         console.log(" Input:",palavra_vetor)
@@ -125,7 +125,7 @@ inputs.forEach((input, index) => {
                 if (index < inputs.length - 1) {
                     focarProximoVazio(index); // Foca no próximo input vazio
                 } else {
-                    this.blur(); // Remove focus from the last input
+                    // this.blur(); // Remove focus from the last input
                 }
             }}
         
