@@ -71,6 +71,14 @@ body{
             flex-wrap: nowrap;
             justify-content: center;
         }
+        #tecla_backspace{
+            img{
+                width: 70%;height: auto;
+                /* background-color: white;
+                color: transparent; */
+                filter: invert(1);
+            }
+        }
         .tecla{
             display: flex;
             justify-content: center;
