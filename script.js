@@ -7,14 +7,14 @@ fetch("termos.txt")
     var tentativa = 1
     palavras = texto.split('\r\n')
 
-    var rng = new Math.seedrandom(hoje+444);
+    var rng = new Math.seedrandom(hoje+1);
     var palavra_chave = palavras[Math.floor(rng() * palavras.length)]
     console.log(' data:' ,hoje,
                 '\n resposta do dia:', palavra_chave)
 
-const inputs = document.querySelectorAll("input");
+const inputs = document.querySelectorAll(".input_ltter");
 
-inputs[0].focus()
+// inputs[0].focus()
 
 function sprt_palavra(str){
     palavra_vet = [
@@ -39,7 +39,7 @@ function get_palavra(){
         console.log('preencha todos os campos:', palavra_vetor)
     }else{
         definir_palavra()
-        console.log(" Input:",palavra_vetor)
+        console.log("# Input:",palavra_vetor)
         inputs[0].value=''
         inputs[1].value=''
         inputs[2].value=''
@@ -69,7 +69,18 @@ function definir_palavra(){
                 if(palavra_vetor[index]==palavra_chave[index]){
                     letra.className="letter right"
                 }
-                })        
+                })
+            palavra_vetor.forEach((letra,index)=>{
+                var tecla = document.getElementById("tecla_"+letra)
+                if( palavra_chave.includes(palavra_vetor[index])){
+                    tecla.className="tecla s_right"
+                }else{
+                    tecla.className="tecla wrong"
+                }
+                if(palavra_vetor[index]==palavra_chave[index]){
+                    tecla.className="tecla right"
+                }
+            })        
             var  input_box = document.getElementById('input_box')
             if (tentativa<6){
                 input_box.style.top = (8+(78*tentativa))+'px'
@@ -103,8 +114,6 @@ addEventListener("keydown", function(event) {
     }})
 
 inputs.forEach((input, index) => {
-
-
     input.addEventListener("keydown", function(event) {
         switch (event.key) {
             case "Enter":
@@ -116,6 +125,20 @@ inputs.forEach((input, index) => {
             this.value = "";
             inputs[index-1].focus();
             event.preventDefault();
+            case "ArrowLeft":
+                if (index!=0){
+                    inputs[index-1].focus();
+                }else{
+                    inputs[4].focus()
+                }
+                break;
+            case "ArrowRight":
+                if (index !=4){
+                    inputs[index+1].focus();
+                }else{
+                    inputs[0].focus()
+                }
+                break;
             break;default:break;
         }
         if (event.key.length === 1) {
